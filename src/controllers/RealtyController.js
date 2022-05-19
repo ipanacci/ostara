@@ -38,21 +38,21 @@ module.exports = class RealtyController{
     edit(request, response) {
         const Realty = new RealtyRepository();
         let entity={};
-        let fields= ['title'];
+        let fields= ['type', 'address_1', 'address_2', 'city','zipcode','surface','nb_rooms','price','description'];
         for (let el of fields){
             if (request.body[el]){
                 entity[el]=request.body[el];
             }
         }
         Realty.update(entity, request.params.id).then(result=>{
-            response.status(200).send("Realty Type bien modifié");
+            response.status(200).send("Realty bien modifié");
         })
     }
 
     remove(request, response){
         const Realty = new RealtyRepository();
         Realty.delete(request.params.id).then(result=>{
-            response.status(200).send("Realty type bien éliminé");
+            response.status(200).send("Realty bien éliminé");
         })   
     }
 
