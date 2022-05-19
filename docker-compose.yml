@@ -1,0 +1,23 @@
+version: '3'
+ 
+services:
+  db:
+    image: mysql:5.7
+    platform: linux/x86_64
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: my_secret_password
+      MYSQL_DATABASE: immo
+      MYSQL_USER: db_user
+      MYSQL_PASSWORD: abc123
+    ports:
+      - "3306:3306"
+    volumes:
+      - datasql:/var/lib/mysql
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+volumes:
+  datasql:
