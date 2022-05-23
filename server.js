@@ -10,7 +10,7 @@ app.use(express.urlencoded({extended:true}));
 
 const apiRoutes = require('./api/routes');
 app.use('/api', apiRoutes);
- 
+
 //--------------------------------------------------------------------
 //     Ecoute du serveur HTTP
 //--------------------------------------------------------------------
