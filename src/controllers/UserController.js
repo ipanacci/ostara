@@ -32,7 +32,6 @@ module.exports = class UserController {
             email: request.body.email,
             password: request.body.password,
         };
-       
         User.insert(entity).then(result => {
             response.status(201).json(result);
         });
@@ -40,7 +39,6 @@ module.exports = class UserController {
     }
 
     modify(request, response) {
-       
         let entity = {};
         let fields = ['firstname', 'lastname', 'email', 'password'];
         fields.forEach(field => { if (request.body[field])  entity[field] = request.body[field]; });

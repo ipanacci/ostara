@@ -31,6 +31,7 @@ router.get('/', (req, res) => {
 
 /**
      * @api {get} /api/user/:id User by id
+     * @apiParam {Number} id User unique ID
      * @apiVersion 1.0.0
      * @apiName GetUserById
      * @apiGroup Users
@@ -84,6 +85,7 @@ router.post('/', (req, res) => {
 
 /**
      * @api {put} /api/users/:id User by id
+     * @apiParam {Number} id User unique ID
      * @apiVersion 1.0.0
      * @apiName EditUser
      * @apiGroup Users
@@ -110,6 +112,7 @@ router.put('/:id', (new UserController).modify);
 
 /**
      * @api {delete} /api/user Users list
+     * @apiParam {Number} id User unique ID
      * @apiVersion 1.0.0
      * @apiName DeleteUser
      * @apiGroup Users

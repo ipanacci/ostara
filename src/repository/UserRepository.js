@@ -2,6 +2,12 @@ const db = require('../../app/database_sql.js');
  
 module.exports = class UserRepository {
  
+
+    countAll(){
+        return db.promise().execute(
+            "SELECT COUNT(*) AS nb FROM users", 
+         ).then(result => {return result[0][0].nb;});
+    }
     getAll(offset = 0, limit = 100) {
         return db.promise().execute(
            "SELECT * FROM users LIMIT ?, ?", 
