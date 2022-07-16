@@ -25,6 +25,7 @@ module.exports = class UserController {
     }
 
     post(request, response){
+        console.log(request.body);
         const User = new UserRepository();
         let entity = {
             firstname: request.body.firstname,

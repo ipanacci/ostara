@@ -26,6 +26,7 @@ const UserController = require('../src/controllers/UserController');
 
 // Récupére tous les utilisateurs
 router.get('/', (req, res) => {
+     console.log('hello');
     (new UserController).getAll(req, res);
 });
 
